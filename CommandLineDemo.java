@@ -1,43 +1,24 @@
-// Java Program to Demonstrate Command Line Arguments
-// Operations: Sum, Largest Number, Odd/Even
-
 class CommandLineDemo {
     public static void main(String args[]) {
 
-        // Check if exactly 2 arguments are passed
         if (args.length != 2) {
-            System.out.println("Please enter exactly 2 numbers.");
+            System.out.println("Enter 2 numbers");
             return;
         }
 
-        // Convert command line arguments to integers
-        int num1 = Integer.parseInt(args[0]);
-        int num2 = Integer.parseInt(args[1]);
+        int a = Integer.parseInt(args[0]);
+        int b = Integer.parseInt(args[1]);
 
-        // Sum
-        int sum = num1 + num2;
-        System.out.println("Sum = " + sum);
+        System.out.println("Sum = " + (a + b));
 
-        // Find Largest
-        if (num1 > num2) {
-            System.out.println(num1 + " is the largest number.");
-        } else if (num2 > num1) {
-            System.out.println(num2 + " is the largest number.");
-        } else {
-            System.out.println("Both numbers are equal.");
-        }
+        if (a > b)
+            System.out.println(a + " is largest");
+        else if (b > a)
+            System.out.println(b + " is largest");
+        else
+            System.out.println("Both are equal");
 
-        // Check Odd/Even
-        if (num1 % 2 == 0) {
-            System.out.println(num1 + " is Even.");
-        } else {
-            System.out.println(num1 + " is Odd.");
-        }
-
-        if (num2 % 2 == 0) {
-            System.out.println(num2 + " is Even.");
-        } else {
-            System.out.println(num2 + " is Odd.");
-        }
+        System.out.println(a + (a % 2 == 0 ? " is Even" : " is Odd"));
+        System.out.println(b + (b % 2 == 0 ? " is Even" : " is Odd"));
     }
 }
